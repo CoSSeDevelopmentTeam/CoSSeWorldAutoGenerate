@@ -15,7 +15,7 @@ public class WorldGenerator extends PluginBase {
     @Override
     public void onEnable() {
         Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("Asia/Tokyo"));
-        if (calendar.HOUR_OF_DAY != 0) return;
+        if (calendar.get(Calendar.HOUR_OF_DAY) != 0) return;
 
         File dir = new File(this.getServer().getFilePath() + File.separator + "worlds" + File.separator + "resource");
         if (dir.exists()) {
@@ -23,7 +23,7 @@ public class WorldGenerator extends PluginBase {
             dir.delete();
         }
 
-        switch (calendar.DAY_OF_WEEK) {
+        switch (calendar.get(Calendar.DAY_OF_WEEK)) {
             case Calendar.SUNDAY:
                 generateLevel(CoSSeWorldGenerator.GENERATE_TYPE_FOREST);
                 break;
@@ -52,5 +52,6 @@ public class WorldGenerator extends PluginBase {
         Long seed = new Random().nextLong();
         Class<? extends Generator> generator = Generator.getGenerator(type);
         getServer().generateLevel("resource", seed, generator);
+        getServer().loadLevel("resource");
     }
 }
