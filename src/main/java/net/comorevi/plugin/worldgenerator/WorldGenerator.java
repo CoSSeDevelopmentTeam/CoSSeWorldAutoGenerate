@@ -3,7 +3,6 @@ package net.comorevi.plugin.worldgenerator;
 import cn.nukkit.level.generator.Generator;
 import cn.nukkit.plugin.PluginBase;
 import net.comorevi.plugin.cosseworldgenerator.CoSSeWorldGenerator;
-import org.iq80.leveldb.util.FileUtils;
 
 import java.io.File;
 import java.util.Calendar;
