@@ -1,6 +1,6 @@
-name: WorldGenerator
+name: WorldAutoGenerate
 main: net.comorevi.plugin.worldgenerator.WorldGenerator
-version: 1.0.1
+version: 1.1.0
 load: POSTWORLD
 author: popkechupki
 api: ["1.0.0"]
