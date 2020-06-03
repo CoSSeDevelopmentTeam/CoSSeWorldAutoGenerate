@@ -2,7 +2,6 @@ package net.comorevi.np.cwg;
 
 import cn.nukkit.Server;
 import cn.nukkit.level.generator.Generator;
-import cn.nukkit.level.particle.FloatingTextParticle;
 import cn.nukkit.plugin.PluginBase;
 import net.comorevi.np.cwg.generator.*;
 import org.iq80.leveldb.util.FileUtils;
@@ -43,7 +42,7 @@ public class Main extends PluginBase {
         Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("Asia/Tokyo"));
         File dir = new File("./worlds/resource");
         if (calendar.get(Calendar.HOUR_OF_DAY) != 0 && dir.exists()) {
-            loadLevel();
+            getServer().loadLevel("resource");
             return;
         }
 
@@ -72,7 +71,7 @@ public class Main extends PluginBase {
                         break;
                 }
             }
-        }, 20, true);
+        }, 1, true);
     }
 
     private void generateLevel(int type) {
@@ -82,9 +81,5 @@ public class Main extends PluginBase {
         }
         Class<? extends Generator> generator = Generator.getGenerator(type);
         getServer().generateLevel("resource", new Random().nextLong(), generator);
-    }
-
-    private void loadLevel() {
-        getServer().loadLevel("resource");
     }
 }
