@@ -1,7 +1,7 @@
 name: WorldAutoGenerate
-main: net.comorevi.plugin.worldgenerator.WorldGenerator
-version: 1.1.0
-load: POSTWORLD
+main: net.comorevi.np.cwg.Main
+version: 1.1.2
+load: STARTUP
 author: popkechupki
 api: ["1.0.0"]
 description: "WorldGenerator for CosmoSunriseServer"
